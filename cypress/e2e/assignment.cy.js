@@ -5,6 +5,9 @@ describe('Test with page objects',()=>{
       cy.visit('http://automationpractice.com/index.php')
   })
 
+
+// Validate whether the search suggestion is not given to the user until 3 characters are populated.
+
   it("first test", () => {
   
     const singleLetters = ["F", "B", "P", "f", "b", "p"];
@@ -43,6 +46,9 @@ describe('Test with page objects',()=>{
     }
   });
 
+  // Validate results are displayed according to the search made by the user.
+
+
   it("second test", () => {
 
     const tripleLetters = [
@@ -70,7 +76,7 @@ describe('Test with page objects',()=>{
     }
   });
 
-  
+  //Validate whether the user is able to apply the large size catalog filter for the T-shirt section.
 
   it("third test", () => {
     cy.get('ul.sf-menu>li').eq(2).should('contain','T-shirts').click()
@@ -87,7 +93,8 @@ describe('Test with page objects',()=>{
   });
 
   
-  // test case
+  // Validate whether the user is able to upload  a file on the contact us page.
+
   it("fourth test", function () {
   
     cy.get("#contact-link")
@@ -119,7 +126,7 @@ describe('Test with page objects',()=>{
   })
 })
   
-   
+   // Add 5 products in the cart, validate total cart amount 
 
   it("fifth test", () => {
     cy.get('[class="sf-with-ul"]').contains('Women').click();
